@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :jobs do
+      resources :resumes
       member do
         post :publish
         post :hide
@@ -15,6 +16,5 @@ Rails.application.routes.draw do
   resources :jobs do
     resources :resumes
   end
-
   root 'jobs#index'
 end
